@@ -5,8 +5,11 @@ const controller = {
     'movieDetail': (req, res) => {
         return res.render('movieDetail')
     },
-    'movieForms': (req,res) => {
-        return res.render('movieForms')
+    'movieRegister': (req,res) => {
+        return res.render('movieRegister')
+    },
+    'movieEdit': (req,res) => {
+        return res.render('movieEdit')
     }
 }
 

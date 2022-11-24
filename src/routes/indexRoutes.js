@@ -7,7 +7,11 @@ router.get('/home', indexController.index);
 
 router.get('/movieDetail', indexController.movieDetail);
 
-router.get('/movieForms', indexController.movieForms);
+router.get('/movie/:id', indexController.movieDetail); //ruta parametrizada
+
+router.get('/movieRegister', indexController.movieRegister);
+
+router.get('/movieEdit', indexController.movieEdit);
 
 router.put('/movieDetail/edit', function(req, res){
     res.send('Fui por PUT!');
