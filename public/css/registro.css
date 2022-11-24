@@ -1,0 +1,32 @@
+
+
+body {
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: #efefef;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color:rebeccapurple
+}
+
+.impar {
+    border: 1px red solid;
+}
+
+.par {
+    border: 1px green solid;
+}
+
+.cuestionarios{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.boton {
+    padding: 1%;
+}
