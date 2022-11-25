@@ -13,8 +13,12 @@
     <p>Clasificación:<%= peliculas.rating %></p>
     <p>Premios:<%= peliculas.awards %></p>
     <p>Fecha de Estreno:<%= peliculas.release_date %></p>
+    <% if(peliculas.length) { %> 
     <p>Duracion:<%= peliculas.length %></p>
+    <% } %> 
+    <% if(peliculas.genres) { %> 
     <p>Genero:<%= peliculas.genres.name %></p></p>
+    <% } %> 
     <p>Actores:</p>
 </body>
 </html>
