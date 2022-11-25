@@ -8,10 +8,10 @@ const controller = {
         })
     },
     'movieDetail': (req, res) => {
-        db.Genres.findAll()
-        .then(function(generos) {
-            console.log(generos)
-            res.render('movieDetail', {generos:generos})
+        db.Actor_movie.findAll()
+        .then(function(actor_movie) {
+            console.log(actor_movie)
+            res.render('movieDetail', {actor_movie:actor_movie})
         })
     },
     'movieRegister': (req,res) => {

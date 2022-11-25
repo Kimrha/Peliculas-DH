@@ -11,9 +11,9 @@
     <h2>Detalle de Pelicula</h2>
     <p>etiqueta de prueba</p>
     <ul>
-        <% for (let i = 1; i < generos.length; i++) { %>
+        <% for (let i = 0; i < actor_movie.length; i++) { %>
         <li>
-            <%= generos[i].name %> 
+            <%= actor_movie[i].actor_id %> <%= actor_movie[i].movie_id %> 
         </li>
         <% } %> 
     </ul>
