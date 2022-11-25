@@ -8,9 +8,9 @@ const controller = {
         })
     },
     'movieDetail': (req, res) => {
-        db.Movies.findByPk(req.params.idPelicula)
+        db.Movies.findAll()
         .then(function(peliculas) {
-            res.render('movieDetail',{peliculas:peliculas})
+            res.render('movieDetail',{peliculas:peliculas[req.params.idPelicula]})
         })
     },
     'movieRegister': (req,res) => {
