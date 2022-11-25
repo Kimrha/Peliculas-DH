@@ -11,9 +11,12 @@
     <h2>Detalle de Pelicula</h2>
     <p>etiqueta de prueba</p>
     <ul>
-        <% for (let i = 0; i < actor_movie.length; i++) { %>
+        <% for (let i = 0; i < actores.length; i++) { %>
         <li>
-            <%= actor_movie[i].actor_id %> <%= actor_movie[i].movie_id %> 
+            <%= actores[i].first_name %> 
+            <%= actores[i].last_name %> 
+            <%= actores[i].rating %> 
+            <%= actores[i].favorite_movie_id %> 
         </li>
         <% } %> 
     </ul>
