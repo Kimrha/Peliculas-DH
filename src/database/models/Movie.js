@@ -33,6 +33,13 @@ module.exports = (sequelize, dataTypes) => {
             timestamps:false //si tiene create_at y Update_at
         };
         const Movie = sequelize.define(alias, cols, config);
+        
+        Movie.associate = function(models){
+            Movie.belongsTo(models.Genres, {
+                as: "genres",
+                foreignKey:"genre_id",
+            });
+        }
 
         return Movie;
 }

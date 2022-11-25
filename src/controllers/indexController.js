@@ -4,11 +4,14 @@ const controller = {
     'index': (req, res) => {
         db.Movies.findAll()
         .then(function(peliculas) {
+            //res.send(peliculas)
             res.render('index',{peliculas:peliculas})
         })
     },
     'movieDetail': (req, res) => {
-        db.Movies.findAll()
+        db.Movies.findAll({
+            include: [{association:'genres'}]
+        })
         .then(function(peliculas) {
             res.render('movieDetail',{peliculas:peliculas[req.params.idPelicula]})
         })
