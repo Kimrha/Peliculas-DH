@@ -9,5 +9,13 @@
 <body>
     <%- include ('partials/header.ejs') %>
     <h2>Listado de Peliculas</h2>
+    <ul>
+        <% for (let i = 0; i < peliculas.length; i++) { %>
+        <li>
+            <%= peliculas[i].title %> 
+            <% console.log(peliculas[i]) %> 
+        </li>
+        <% } %> 
+    </ul>
 </body>
 </html>

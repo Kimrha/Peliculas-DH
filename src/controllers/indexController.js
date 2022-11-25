@@ -1,6 +1,11 @@
+let db = require('../database/models');
+
 const controller = {
     'index': (req, res) => {
-        return res.render('index');
+        db.Movies.findAll()
+        .then(function(peliculas) {
+            res.render('index',{peliculas:peliculas})
+        })
     },
     'movieDetail': (req, res) => {
         return res.render('movieDetail')
