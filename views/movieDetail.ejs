@@ -10,7 +10,13 @@
     <%- include ('partials/header.ejs') %>
     <h2>Detalle de Pelicula</h2>
     <p>etiqueta de prueba</p>
-    <p><%= %> </p>
+    <ul>
+        <% for (let i = 1; i < generos.length; i++) { %>
+        <li>
+            <%= generos[i].name %> 
+        </li>
+        <% } %> 
+    </ul>
     <p>Datos</p>
     <p>Genero</p>
     <p>Actores</p>
