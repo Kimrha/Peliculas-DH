@@ -1,5 +1,4 @@
 let db = require('../database/models');
-
 const controller = {
     'index': (req, res) => {
         db.Movies.findAll()
@@ -8,7 +7,11 @@ const controller = {
         })
     },
     'movieDetail': (req, res) => {
-        return res.render('movieDetail')
+        db.Users.findAll()
+        .then(function(users) {
+            console.log(users)
+            return res.render('movieDetail', {users:users})
+        })
     },
     'movieRegister': (req,res) => {
         return res.render('movieRegister')
