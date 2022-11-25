@@ -19,6 +19,17 @@
     <% if(peliculas.genres) { %> 
     <p>Genero:<%= peliculas.genres.name %></p></p>
     <% } %> 
+    <% if (peliculas.actors.length > 0) { %> 
     <p>Actores:</p>
+    <ul>
+        <% for (let i = 0; i < peliculas.actors.length ; i++) { %>
+        <li>
+            <p><%=  peliculas.actors[i].first_name %> <%=  peliculas.actors[i].last_name %></p>
+        </li>
+        <% } %> 
+    </ul>
+    <% } else { %> 
+        <p>Lo sentimos, pero en nuestra base de datos esta pelicula no tiene actores :(</p>
+    <% } %> 
 </body>
 </html>

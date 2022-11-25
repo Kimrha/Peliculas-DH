@@ -9,10 +9,9 @@ const controller = {
         })
     },
     'movieDetail': (req, res) => {
-        db.Movies.findAll({
-            include: [{association:'genres'}]
-        })
+        db.Movies.findAll({ include: ["genres", "actors"] })
         .then(function(peliculas) {
+            //res.send(peliculas[req.params.idPelicula])
             res.render('movieDetail',{peliculas:peliculas[req.params.idPelicula]})
         })
     },
