@@ -5,9 +5,7 @@ const indexController = require('../controllers/indexController.js');
 
 router.get('/home', indexController.index);
 
-router.get('/movieDetail', indexController.movieDetail);
-
-router.get('/movie/:id', indexController.movieDetail); //ruta parametrizada
+router.get('/movieDetail/:idPelicula', indexController.movieDetail); //ruta parametrizada
 
 router.get('/movieRegister', indexController.movieRegister);
 

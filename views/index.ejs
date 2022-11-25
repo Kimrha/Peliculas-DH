@@ -12,7 +12,7 @@
     <ul>
         <% for (let i = 0; i < peliculas.length; i++) { %>
         <li>
-            <%= peliculas[i].title %> 
+            <a href="/movieDetail/<%= [i] %> "><%= peliculas[i].title %> </a>
         </li>
         <% } %> 
     </ul>
