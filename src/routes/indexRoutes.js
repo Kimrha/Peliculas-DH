@@ -14,12 +14,6 @@ router.post('/movieCreate', indexController.movieCreatePost);
 
 router.get('/movieEdit', indexController.movieEdit);
 
-router.put('/movieDetail/edit', function(req, res){
-    res.send('Fui por PUT!');
-});
-
-router.delete('/movieDetail/delete/:idUser', function(req,res){
-    res.send('SOY DELETE!');
-});
+router.get('/pruebas', indexController.probando)
 
 module.exports = router;

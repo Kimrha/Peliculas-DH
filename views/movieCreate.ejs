@@ -27,7 +27,7 @@
             <label for="">Genero</label>
             <select name="genero">
                 <% for (let i = 0; i < generos.length; i++) {%> 
-                <option value="">
+                <option value="<%= generos[i].id %>">
                     <%= generos[i].name %> 
                 </option>
                 <% } %>

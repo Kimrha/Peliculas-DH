@@ -35,6 +35,12 @@ const controller = {
     },
     'movieEdit': (req,res) => {
         return res.render('movieEdit')
+    },
+    'probando': (req, res) => {
+        db.Movies.findAll({ include: ["genres"] })
+        .then(function(peliculas) {
+            res.send(peliculas)
+        })
     }
 }
 
