@@ -17,6 +17,9 @@ router.post('/movieCreate', indexController.movieCreatePost);
 //update de pelicula
 router.get('/movieEdit/:id', indexController.movieEdit);
 router.post('/movieEdit/:id', indexController.movieUpdate);
+//delete de pelicula
+router.get('/movieDelete/:id', indexController.movieDelete);
+router.post('/movieDelete/:id', indexController.movieDelete);
 
 router.get('/pruebas', indexController.probando)
 

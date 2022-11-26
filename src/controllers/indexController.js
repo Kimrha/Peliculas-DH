@@ -66,6 +66,14 @@ const controller = {
         .then(function(peliculas) {
             res.send(peliculas)
         })
+    },
+    'movieDelete': (req, res) => {
+        db.Movies.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        res.redirect('/home');
     }
 }
 
