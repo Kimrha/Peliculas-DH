@@ -15,8 +15,23 @@ const controller = {
             res.render('movieDetail',{peliculas:peliculas[req.params.idPelicula]})
         })
     },
-    'movieRegister': (req,res) => {
-        return res.render('movieRegister')
+    'movieCreate': (req,res) => {
+        db.Genres.findAll()
+        .then(function(generos){
+            return res.render('movieCreate', {generos:generos})
+        })
+        
+    },
+    'movieCreatePost': (req, res) => {
+        db.Movies.create({
+            title: req.body.titulo,
+            awards: req.body.premios,
+            release_date: req.body.fecha_estreno,
+            genre_id: req.body.genero,
+            length: req.body.duracion,
+            rating: req.body.rating
+        })
+        res.redirect('/home')
     },
     'movieEdit': (req,res) => {
         return res.render('movieEdit')

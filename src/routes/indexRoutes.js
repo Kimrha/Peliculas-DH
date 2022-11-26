@@ -7,7 +7,10 @@ router.get('/home', indexController.index);
 
 router.get('/movieDetail/:idPelicula', indexController.movieDetail); //ruta parametrizada
 
-router.get('/movieRegister', indexController.movieRegister);
+
+//proceso de create de pelicula
+router.get('/movieCreate', indexController.movieCreate);
+router.post('/movieCreate', indexController.movieCreatePost);
 
 router.get('/movieEdit', indexController.movieEdit);
 
