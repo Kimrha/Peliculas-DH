@@ -33,8 +33,33 @@ const controller = {
         })
         res.redirect('/home')
     },
+    
+    
     'movieEdit': (req,res) => {
-        return res.render('movieEdit')
+        let orderMovie = db.Movies.findByPk(req.params.id);
+        let orderGenre = db.Genres.findAll();
+
+        Promise.all([orderMovie, orderGenre])
+        .then(function([pelicula, generos]) {
+            res.render('movieEdit', {pelicula:pelicula, generos:generos})
+        })
+    },
+
+    'movieUpdate': (req, res) => {
+        db.Movies.update({
+            title: req.body.titulo,
+            awards: req.body.premios,
+            release_date: req.body.fecha_estreno,
+            genre_id: req.body.genero,
+            length: req.body.duracion,
+            rating: req.body.rating
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+        res.redirect('/home')
     },
     'probando': (req, res) => {
         db.Movies.findAll({ include: ["genres"] })

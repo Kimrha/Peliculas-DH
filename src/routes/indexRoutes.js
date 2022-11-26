@@ -3,16 +3,20 @@ const router = express.Router();
 
 const indexController = require('../controllers/indexController.js');
 
+//listado de peliculas
 router.get('/home', indexController.index);
 
+//detalle de cada pelicula
 router.get('/movieDetail/:idPelicula', indexController.movieDetail); //ruta parametrizada
 
 
-//proceso de create de pelicula
+//formulario create de peliculas
 router.get('/movieCreate', indexController.movieCreate);
+//create de pelicula
 router.post('/movieCreate', indexController.movieCreatePost);
-
-router.get('/movieEdit', indexController.movieEdit);
+//update de pelicula
+router.get('/movieEdit/:id', indexController.movieEdit);
+router.post('/movieEdit/:id', indexController.movieUpdate);
 
 router.get('/pruebas', indexController.probando)
 
