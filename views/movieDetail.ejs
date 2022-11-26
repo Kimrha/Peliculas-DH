@@ -32,5 +32,8 @@
         <p>Lo sentimos, pero en nuestra base de datos esta pelicula no tiene actores :(</p>
     <% } %> 
     <%- include ('partials/footer.ejs') %>
+    <a href="/movieEdit/<%= peliculas.id %>">
+        <button>Editar</button>
+    </a>
 </body>
 </html>
