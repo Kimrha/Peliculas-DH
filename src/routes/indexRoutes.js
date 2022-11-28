@@ -13,7 +13,8 @@ router.get('/movieDetail/:idPelicula', indexController.movieDetail); //ruta para
 //formulario create de peliculas
 router.get('/movieCreate', indexController.movieCreate);
 //create de pelicula
-router.post('/movieCreate', indexController.movieCreatePost);
+router.post('/movieCreate', indexController.registerValidation)
+//router.post('/movieCreate', indexController.movieCreatePost);
 //update de pelicula
 router.get('/movieEdit/:id', indexController.movieEdit);
 router.post('/movieEdit/:id', indexController.movieUpdate);

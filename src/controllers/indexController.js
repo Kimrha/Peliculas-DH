@@ -74,6 +74,9 @@ const controller = {
             }
         })
         res.redirect('/home');
+    },
+    'registerValidation': (req,res) => {
+        return res.send('Viniste por post')
     }
 }
 
