@@ -9,23 +9,45 @@
 <body>
     <%- include ('partials/header.ejs') %>
     <h2>Seccion de Creacion de Pelicula</h2>
-    
+
     <form action="/movieCreate" method="POST">
-        <div>
+        <div class="form">
         <label for="">Titulo</label>
-        <input type="text" name="titulo">
+        <input t
+        ype="text"
+        name="titulo"
+        value="<%= locals.oldData ? oldData.titulo : null %>">
+        <% if(locals.errors && errors.titulo) { %> 
+            <div class="text-danger">
+                <%= errors.titulo.msg %> 
+            </div>
+        <% } %> 
         </div>
-        <div>
+        <div class="form">
         <label for="">Premios</label>
-        <input type="text" name="premios">
+        <input type="text" name="premios"
+        value="<%= locals.oldData ? oldData.premios : null %>">
+        <% if(locals.errors && errors.premios) { %> 
+            <div class="text-danger">
+                <%= errors.premios.msg %> 
+            </div>
+        <% } %>
         </div>
-        <div>
+        <div class="form">
         <label for="">Duracion</label>
-        <input type="text" name="duracion">
+        <input type="text" name="duracion"
+        value="<%= locals.oldData ? oldData.duracion : null %>">
+        <% if(locals.errors && errors.duracion) { %> 
+            <div class="text-danger">
+                <%= errors.duracion.msg %> 
+            </div>
+        <% } %>
         </div>
-        <div>
+
+        <div class="form">
             <label for="">Genero</label>
             <select name="genero">
+                <option value="">Elegí un genero</option>
                 <% for (let i = 0; i < generos.length; i++) {%> 
                 <option value="<%= generos[i].id %>">
                     <%= generos[i].name %> 
@@ -33,13 +55,26 @@
                 <% } %>
             </select>
         </div>
-        <div>
+
+        <div class="form">
             <label for="">Fecha de Estreno</label>
-            <input type="date" name="fecha_estreno">
+            <input type="date" name="fecha_estreno"
+            value="<%= locals.oldData ? oldData.fecha_estreno : null %>">
+            <% if(locals.errors && errors.fecha_estreno) { %> 
+                <div class="text-danger">
+                    <%= errors.fecha_estreno.msg %> 
+                </div>
+            <% } %>
         </div>
-        <div>
+        <div class="form">
             <label for="">Rating</label>
-            <input type="text" name="rating">
+            <input type="text" name="rating"
+            value="<%= locals.oldData ? oldData.rating : null %>">
+            <% if(locals.errors && errors.rating) { %> 
+                <div class="text-danger">
+                    <%= errors.rating.msg %> 
+                </div>
+            <% } %>
         </div>
         <button type="submit">Registrar Pelicula</button>
     </form>

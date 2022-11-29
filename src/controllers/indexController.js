@@ -1,4 +1,5 @@
 let db = require('../database/models');
+const { validationResult } = require('express-validator');
 
 const controller = {
     'index': (req, res) => {
@@ -22,18 +23,35 @@ const controller = {
         })
         
     },
-    'movieCreatePost': (req, res) => {
-        db.Movies.create({
-            title: req.body.titulo,
-            awards: req.body.premios,
-            release_date: req.body.fecha_estreno,
-            genre_id: req.body.genero,
-            length: req.body.duracion,
-            rating: req.body.rating
+    'movieCreatePost': (req,res) => {
+        const resultValidation = validationResult(req);
+
+        db.Genres.findAll()
+        .then(function(generos){
+            if (resultValidation.errors.length > 0) {
+                return res.render('movieCreate', {generos:generos ,
+                    errors:resultValidation.mapped(), oldData: req.body
+                });
+            } else {
+                db.Movies.create({
+                    title: req.body.titulo,
+                    awards: req.body.premios,
+                    release_date: req.body.fecha_estreno,
+                    genre_id: req.body.genero,
+                    length: req.body.duracion,
+                    rating: req.body.rating
+                })
+                res.redirect('/home')
+            }
         })
-        res.redirect('/home')
+
+
+        /*if (resultValidation.errors.length > 0) {
+            return res.render('movieCreate', {
+                errors:resultValidation.mapped(),
+            });
+        }*/
     },
-    
     
     'movieEdit': (req,res) => {
         let orderMovie = db.Movies.findByPk(req.params.id);
@@ -75,9 +93,6 @@ const controller = {
         })
         res.redirect('/home');
     },
-    'registerValidation': (req,res) => {
-        return res.send('Viniste por post')
-    }
 }
 
 module.exports = controller;

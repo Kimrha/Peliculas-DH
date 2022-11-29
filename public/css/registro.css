@@ -30,3 +30,11 @@ h2 {
 .boton {
     padding: 1%;
 }
+
+.text-danger {
+    color:red;
+}
+
+.form {
+    padding: 10px;
+}
