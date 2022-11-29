@@ -47,13 +47,23 @@
         <div class="form">
             <label for="">Genero</label>
             <select name="genero">
-                <option value="">Elegí un genero</option>
+                <option value="Elige un genero">Elige un genero</option>
                 <% for (let i = 0; i < generos.length; i++) {%> 
-                <option value="<%= generos[i].id %>">
+                <option value="<%= generos[i].id %>"
+                <% if (locals.oldData) { %> 
+                    <% if(generos[i].id === locals.oldData.genero) { %> 
+                        <%='selected'%>
+                    <% } %>
+                <% } %>>
                     <%= generos[i].name %> 
                 </option>
                 <% } %>
             </select>
+            <% if(locals.errors && errors.genero) { %> 
+                <div class="text-danger">
+                    <%= errors.genero.msg %> 
+                </div>
+            <% } %>
         </div>
 
         <div class="form">
@@ -78,6 +88,9 @@
         </div>
         <button type="submit">Registrar Pelicula</button>
     </form>
-
+    <% if (locals.errors) { %> 
+    <p><%= locals.oldData.genero %> </p>
+    <% console.log(locals.oldData.genero) %> 
+    <% } %> 
     <%- include ('partials/footer.ejs') %>
 </body>

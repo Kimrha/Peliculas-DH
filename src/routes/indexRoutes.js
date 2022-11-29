@@ -1,16 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { body } = require('express-validator')
-
-const validations = [
-    body('titulo').notEmpty().withMessage('El campo titulo no puede quedar vacio'),
-    body('premios').notEmpty().withMessage('El campo premios no puede quedar vacio'),
-    body('duracion').notEmpty().withMessage('El campo duracion no puede quedar vacio'),
-    body('genero').notEmpty().withMessage('El campo genero no puede quedar vacio'),
-    body('fecha_estreno').notEmpty().withMessage('El campo fecha de estreno no puede quedar vacio'),
-    body('rating').notEmpty().withMessage('El campo rating no puede quedar vacio')
-]
+const validationsMovieCreate = require('../middlewares/validationsMovieCreate')
 
 const indexController = require('../controllers/indexController.js');
 
@@ -25,7 +16,7 @@ router.get('/movieDetail/:idPelicula', indexController.movieDetail); //ruta para
 router.get('/movieCreate', indexController.movieCreate);
 
 //create de pelicula
-router.post('/movieCreate', validations, indexController.movieCreatePost)
+router.post('/movieCreate', validationsMovieCreate, indexController.movieCreatePost)
 
 //update de pelicula
 router.get('/movieEdit/:id', indexController.movieEdit);
