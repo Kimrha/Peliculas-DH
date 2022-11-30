@@ -1,3 +1,4 @@
+let db = require('../database/models');
 const { validationResult } = require('express-validator');
 
 const controller = {
@@ -10,6 +11,11 @@ const controller = {
             return res.render('userRegister', { errors:resultValidation.mapped(),
             oldData: req.body});
         } else {
+            db.Users.create({
+                name: req.body.nombre,
+                email: req.body.email,
+                password: req.body.contraseña,
+            })
             res.redirect('/home')
         }
     },
