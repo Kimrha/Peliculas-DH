@@ -12,15 +12,26 @@
     
     <main>
         <div class="caja1">
-            <form action="/access" method="POST" class="caja2">
+            <form action="/user/login" method="POST" class="caja2">
                 <p class="elemento1"> INGRESÁ TUS DATOS </p>
                 
                     <label for="correo"></label>
-                    <input type="email" placeholder="Email" id="correo" name="correo"  >     
+                    <input type="email" name="email"  
+                    value="<%= locals.oldData ? oldData.email : null %>">
+                    <% if(locals.errors && errors.email) { %> 
+                        <div class="text-danger">
+                            <%= errors.email.msg %> 
+                        </div>
+                    <% } %>
 
 
                     <label for="contraseña"></label>
-                    <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña">
+                    <input type="password" name="contraseña">
+                    <% if(locals.errors && errors.contraseña) { %> 
+                        <div class="text-danger">
+                            <%= errors.contraseña.msg %> 
+                        </div>
+                    <% } %>
 
                     <input type="checkbox" id="recuerdame" name="recuerdame" value="recuerdame">
                     <label for="recuerdame">Recuérdame</label>
