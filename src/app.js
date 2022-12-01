@@ -2,7 +2,13 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override'); //para operar con put y delete
 
+//requerir express-session para las sesision de usuario
 const session = require('express-session');
+
+//middleware creado para que muestre crear usuario e iniciar sesion si no estoy loggeado
+//y que muestre el perfil de usuario solo si estoy logeado
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+//tiene q iniciarse si o si despues de la session
 
 //¿?
 app.use(express.urlencoded({extended: false}));
@@ -15,6 +21,8 @@ app.use(session({
     resave:false,
     saveUninitialized: false,
 }))
+
+app.use(userLoggedMiddleware);
 
 app.use(methodOverride("_method"));//para operar con PUT and DELETE
 

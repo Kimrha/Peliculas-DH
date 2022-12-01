@@ -42,6 +42,11 @@ const controller = {
     'profile': (req, res) => {
         //console.log(req.session.userLogged)
         res.render('profile', {user: req.session.userLogged})
-    }}
+    },
+    'logout': (req,res) => {
+        req.session.destroy();
+        res.redirect('/user/login')
+    }
+}
 
 module.exports = controller;
