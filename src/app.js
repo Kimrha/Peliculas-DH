@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override'); //para operar con put y delete
 
+//modulo que nos permite trabajar con cookies :D
+const cookies = require('cookie-parser');
+
 //requerir express-session para las sesision de usuario
 const session = require('express-session');
 
@@ -23,6 +26,7 @@ app.use(session({
 }))
 
 app.use(userLoggedMiddleware);
+app.use(cookies());
 
 app.use(methodOverride("_method"));//para operar con PUT and DELETE
 

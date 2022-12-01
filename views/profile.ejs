@@ -8,11 +8,7 @@
 </head>
 <body>
     <%- include ('partials/header.ejs') %>
-    <h2>Perfil de <%= user.name %> </h2>
-
-    <a href="#">
-        <button>Editar</button>
-    </a>
+    <h2>Perfil de <%= locals.userLogged.name %> </h2>
     <a href="/user/logout">
         <button>Cerrar Sesion</button>
     </a>

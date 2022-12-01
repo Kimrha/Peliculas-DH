@@ -36,12 +36,16 @@ const controller = {
                 }}).then(user => {
                     delete user.dataValues.password
                     req.session.userLogged = user;
+                    if (req.body.recuerdame){
+                        res.cookie('userEmail', req.body.email, { maxAge: (100 * 60) * 7})
+                    }
                     res.redirect('/user/profile');
                 })}
     },
     'profile': (req, res) => {
-        //console.log(req.session.userLogged)
-        res.render('profile', {user: req.session.userLogged})
+        console.log(req.session.userLogged)
+        console.log(req.cookies.userEmail)
+        res.render('profile', {user: req.session.userLogged});
     },
     'logout': (req,res) => {
         req.session.destroy();
