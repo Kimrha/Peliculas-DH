@@ -20,6 +20,7 @@ const controller = {
         }
     },
     'login': (req, res) => {
+        //console.log(req.session)
         return res.render('userLogin');
     },
     'loginProcess': (req, res) => {
@@ -32,16 +33,15 @@ const controller = {
                 {where: {
                     email: req.body.email,
                     password: req.body.contraseña
-                }}
-            ).then(user =>
-                res.send(user)
-                )
-        }
-
-        //const userToLogin = db.Users.findByField('email', req.body.email);
-        //return res.send(db.Users);
-        //res.send(req.body);
-    }
-}
+                }}).then(user => {
+                    delete user.dataValues.password
+                    req.session.userLogged = user;
+                    res.redirect('/user/profile');
+                })}
+    },
+    'profile': (req, res) => {
+        //console.log(req.session.userLogged)
+        res.render('profile', {user: req.session.userLogged})
+    }}
 
 module.exports = controller;

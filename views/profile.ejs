@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <link rel="stylesheet" href="/css/registro.css">
+</head>
+<body>
+    <%- include ('partials/header.ejs') %>
+    <h2>Perfil de <%= user.name %> </h2>
+
+    <a href="#">
+        <button>Editar</button>
+    </a>
+    <a href="#">
+        <button>Cerrar Sesion</button>
+    </a>
+    
+    <%- include ('partials/footer.ejs') %>
+
+</body>

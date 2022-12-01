@@ -2,11 +2,19 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override'); //para operar con put y delete
 
+const session = require('express-session');
+
 //¿?
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 //le decimos a la aplicacion que queremos capturar todo aquello que venga de un formulario
 //como si fuera un objeto literal.
+
+app.use(session({
+    secret: 'Es un secreto',
+    resave:false,
+    saveUninitialized: false,
+}))
 
 app.use(methodOverride("_method"));//para operar con PUT and DELETE
 
