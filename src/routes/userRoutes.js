@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const validationsUserCreate = require('../middlewares/validationsUserCreate')
-const validationsUserLogin = require('../middlewares/validationsUserLogin')
-const guestMiddlewere = require('../middlewares/guestMiddlewere')
-const authMiddlewere = require('../middlewares/authMiddlewere')
+const validationsUserCreate = require('../middlewares/routes/validationsUserCreate')
+const validationsUserLogin = require('../middlewares/routes/validationsUserLogin')
+const guestMiddlewere = require('../middlewares/routes/guestMiddlewere')
+const authMiddlewere = require('../middlewares/routes/authMiddlewere')
 
 const userController = require('../controllers/userController.js');
 

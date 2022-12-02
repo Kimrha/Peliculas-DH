@@ -10,7 +10,7 @@ const session = require('express-session');
 
 //middleware creado para que muestre crear usuario e iniciar sesion si no estoy loggeado
 //y que muestre el perfil de usuario solo si estoy logeado
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+const userLoggedMiddleware = require('./middlewares/globals/userLoggedMiddleware')
 //tiene q iniciarse si o si despues de la session
 
 //¿?

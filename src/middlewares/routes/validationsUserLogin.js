@@ -1,5 +1,5 @@
 const { body } = require('express-validator')
-let db = require('../database/models');
+let db = require('../../database/models');
 
 const validationsUserLogin = [
     body('email').notEmpty().withMessage('El campo email no puede quedar vacio').bail()

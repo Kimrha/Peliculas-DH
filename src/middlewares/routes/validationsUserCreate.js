@@ -1,5 +1,5 @@
 const { body } = require('express-validator')
-let db = require('../database/models');
+let db = require('../../database/models');
 
 const validationsUserCreate = [
     body('nombre')
