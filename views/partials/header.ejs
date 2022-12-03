@@ -1,15 +1,15 @@
 <header>
-    <span class="links-1">
-        <a href="/home">Home</a>
+    <div class="div-var">
+        <a href="/home" class="link">Home</a>
         <% if(locals.userLogged) {%> 
         <% if(locals.userLogged.rol == 1 ) {%> 
-        <a href="/movieCreate">Registrar Pelicula</a>
+        <a href="/movieCreate" class="link">Registrar Pelicula</a>
         <% }} %> 
         <% if(locals.isLogged) { %> 
-        <a href="/user/profile">Perfil de <%= locals.userLogged.name %></a>
+        <a href="/user/profile" class="link">Perfil de <%= locals.userLogged.name %></a>
         <% } else { %> 
-        <a href="/user/register">Crear  Usuario</a>
-        <a href="/user/login">Iniciar Sesion</a>
+        <a href="/user/register" class="link">Crear  Usuario</a>
+        <a href="/user/login" class="link">Iniciar Sesion</a>
         <% } %> 
-        </span>
+    </div>
 </header>

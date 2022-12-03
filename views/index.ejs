@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Sitio Web</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/nav-var.css">
 </head>
 <body>
     <%- include ('partials/header.ejs') %>
@@ -12,7 +13,7 @@
     <ul>
         <% for (let i = 0; i < peliculas.length; i++) { %>
         <li>
-            <a href="/movieDetail/<%= [i] %> "><%= peliculas[i].title %> </a>
+            <a href="/movieDetail/<%= [i] %> " class="title-movie"><%= peliculas[i].title %> </a>
         </li>
         <% } %> 
     </ul>

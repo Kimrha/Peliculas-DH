@@ -1,0 +1,9 @@
+.div-bar {
+    text-decoration-line:underline;
+}
+
+.link {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+}
