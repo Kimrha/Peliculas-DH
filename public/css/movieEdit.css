@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+
 
 body {
     height: 100vh;
@@ -14,23 +12,6 @@ h2 {
     color:rebeccapurple
 }
 
-form {
-    margin: 0 auto;
-    width: 300px;
-}
-
-.form {
-    width: 400px;
-    padding: 30px;
-    margin:auto;
-    margin-top: 20px;
-    border-radius: 4px;
-}
-
-.div-form {
-    padding: 20px;
-}
-
 .cuestionarios{
     margin: auto;
     display: flex;
@@ -42,9 +23,6 @@ form {
     padding: 1%;
 }
 
-.text-danger {
-    color:red;
-}
 
 .form {
     padding: 10px;

@@ -12,14 +12,6 @@ h2 {
     color:rebeccapurple
 }
 
-.impar {
-    border: 1px red solid;
-}
-
-.par {
-    border: 1px green solid;
-}
-
 .cuestionarios{
     margin: auto;
     display: flex;

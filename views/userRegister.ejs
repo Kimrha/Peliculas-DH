@@ -4,41 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar</title>
-    <link rel="stylesheet" href="/css/registro.css">
+    <link rel="stylesheet" href="/css/form.css">
     <link rel="stylesheet" href="/css/nav-var.css">
 </head>
 <body>
     <%- include ('partials/header.ejs') %>
     <h2>Seccion de Registro de Usuario</h2>
     
-    <form method="POST" action="/user/register">
-        <label for="">Nombre</label>
-        <input type="text" name="nombre"
+    <form method="POST" action="/user/register" class="form">
+        <div class="div-form">
+        <label for="">Nombre:</label>
+        <input type="text" name="nombre" placeholder="Nombre" class="input"
         value="<%= locals.oldData ? oldData.nombre : null %>">
         <% if(locals.errors && errors.nombre) { %> 
             <div class="text-danger">
                 <%= errors.nombre.msg %> 
             </div>
         <% } %>
-        <br>
-        <label for="">E-mail</label>
-        <input type="email" name="email"
+        </div>
+        <div class="div-form">
+        <label for="">E-mail:</label>
+        <input type="email" name="email" placeholder="ejemplo@gmail.com" class="input"
         value="<%= locals.oldData ? oldData.email : null %>">
         <% if(locals.errors && errors.email) { %> 
             <div class="text-danger">
                 <%= errors.email.msg %> 
             </div>
         <% } %>
-        <br>
-        <label for="">Contraseña</label>
-        <input type="password" name="contraseña">
+        </div>       
+        <div class="div-form">
+        <label for="">Contraseña:</label>
+        <input type="password" name="contraseña" placeholder="Contraseña" class="input">
         <% if(locals.errors && errors.contraseña) { %> 
             <div class="text-danger">
                 <%= errors.contraseña.msg %> 
             </div>
         <% } %>
-        <br>
-        <input type="submit" value="Registrar">
+    </div>         
+        <input type="submit" value="Registrar" class="boton">
 
     </form>
     <a href="/user/login">Iniciar Sesion</a>

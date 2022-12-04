@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Pelicula</title>
-    <link rel="stylesheet" href="/css/registro.css">
+    <link rel="stylesheet" href="/css/movieEdit.css">
     <link rel="stylesheet" href="/css/nav-var.css">
 </head>
 <body>
@@ -12,19 +12,19 @@
     <h2>Seccion de Edicion de Pelicula</h2>
     
     <form action="/movieEdit/<%= pelicula.id %> " method="POST">
-        <div>
+        <div class="form">
         <label for="">Titulo</label>
         <input type="text" name="titulo" value="<%= pelicula.title %>">
         </div>
-        <div>
+        <div class="form">
         <label for="">Premios</label>
         <input type="text" name="premios" value="<%= pelicula.awards %>">
         </div>
-        <div>
+        <div class="form">
         <label for="">Duracion</label>
         <input type="text" name="duracion" value="<%= pelicula.length %>">
         </div>
-        <div>
+        <div class="form">
             <label for="">Genero</label>
             <select name="genero">
                 <% for (let i = 0; i < generos.length; i++) {%> 
@@ -43,11 +43,11 @@
                 <% } %>
             </select>
         </div>
-        <div>
+        <div class="form">
             <label for="">Fecha de Estreno</label>
             <input type="date" name="fecha_estreno">
         </div>
-        <div>
+        <div class="form">
             <label for="">Rating</label>
             <input type="text" name="rating" value="<%= pelicula.rating %>">
         </div>
