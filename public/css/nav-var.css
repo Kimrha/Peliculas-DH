@@ -1,5 +1,14 @@
-.div-bar {
-    text-decoration-line:underline;
+header {
+    height: 10vh;
+    margin: 5vh 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .link {

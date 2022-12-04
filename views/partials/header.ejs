@@ -1,6 +1,6 @@
 <header>
-    <div class="div-var">
-        <a href="/home" class="link">Home</a>
+    <nav class="nav">
+        <a href="/home" class="link">Listado de peliculas</a>
         <% if(locals.userLogged) {%> 
         <% if(locals.userLogged.rol == 1 ) {%> 
         <a href="/movieCreate" class="link">Registrar Pelicula</a>
@@ -11,5 +11,5 @@
         <a href="/user/register" class="link">Crear  Usuario</a>
         <a href="/user/login" class="link">Iniciar Sesion</a>
         <% } %> 
-    </div>
+    </nav>
 </header>
