@@ -1,5 +1,3 @@
-const { DataTypes } = require("sequelize");
-
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Actor_movie';
     let cols = {
@@ -16,10 +14,10 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-            tableName: 'actor_movie',
-            timestamps:false //si tiene create_at y Update_at
-        };
-        const Actor_movie = sequelize.define(alias, cols, config);
+        tableName: 'actor_movie',
+        timestamps:false //si tiene create_at y Update_at
+    };
+    const Actor_movie = sequelize.define(alias, cols, config);
 
-        return Actor_movie;
+    return Actor_movie;
 }

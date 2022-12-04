@@ -1,5 +1,3 @@
-const { DataTypes } = require("sequelize");
-
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Users';
     let cols = {
@@ -26,10 +24,10 @@ module.exports = (sequelize, dataTypes) => {
 
     };
     let config = {
-            tableName: 'users',
-            timestamps:false //si tiene create_at y Update_at
-        };
-        const User = sequelize.define(alias, cols, config);
+        tableName: 'users',
+        timestamps:false //si tiene create_at y Update_at
+    };
+    const User = sequelize.define(alias, cols, config);
 
-        return User;
+    return User;
 }

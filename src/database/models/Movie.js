@@ -1,5 +1,3 @@
-const { DataTypes } = require("sequelize");
-
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Movies';
     let cols = {
@@ -25,30 +23,43 @@ module.exports = (sequelize, dataTypes) => {
         },
         genre_id: {
             type: dataTypes.INTEGER
+        },
+        created_at: {
+            type: dataTypes.DATE
+        },
+        updated_at: {
+            type: dataTypes.DATE
+        },
+        deletedAt: {
+            type: dataTypes.DATE
         }
 
     };
     let config = {
-            tableName: 'movies',
-            timestamps:false //si tiene create_at y Update_at
-        };
-        const Movie = sequelize.define(alias, cols, config);
+        tableName: 'movies',
+        timestamps: true, //si tiene create_at y Update_at
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: 'deletedAt',
+        paranoid: true
+    };
+    const Movie = sequelize.define(alias, cols, config);
+    
+    Movie.associate = function(models){
+        Movie.belongsTo(models.Genres, {
+            as: "genres",
+            foreignKey:"genre_id",
+        })
+
+        Movie.belongsToMany(models.Actors, {
+            as: "actors",
+            through: "actor_movie",
+            foreignKey:"movie_id",
+            otherKey: "actor_id",
+            timestamps:false
+        });
         
-        Movie.associate = function(models){
-            Movie.belongsTo(models.Genres, {
-                as: "genres",
-                foreignKey:"genre_id",
-            })
+    }
 
-            Movie.belongsToMany(models.Actors, {
-                as: "actors",
-                through: "actor_movie",
-                foreignKey:"movie_id",
-                otherKey: "actor_id",
-                timestamps:false
-            });
-            
-        }
-
-        return Movie;
+    return Movie;
 }

@@ -90,8 +90,9 @@ const controller = {
             where:{
                 id:req.params.id
             }
+        }).then(() => {
+            res.redirect('/home');
         })
-        res.redirect('/home');
     },
 }
 
