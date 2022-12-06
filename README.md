@@ -29,11 +29,15 @@ llamado "package.json").
 de datos(osea ejecutar ese archivo).
 
 6-Abrir un archivo vacio y correr el siguiente codigo copiado y pegado tal cual:
+USE movies_db;
 ALTER TABLE movies
 ADD deletedAt DATE
 Esto es porque para una funcionalidad del proyecto, una de las tablas de la base de datos necesita un campo extra.
 
 7-Abrir la consola en la carpeta del proyecto y escribir npm start.
 
-¡¡Listo!! El proyecto deberia funcionar correctamente. ¡Que lo disfrutes! :) <3
+¡¡Listo!! El proyecto deberia funcionar correctamente. Para ver el proyecto funcionando presionar en el siguiente enlace:
+http://localhost:3000/home
+
+¡Que lo disfrutes! :) <3
 
