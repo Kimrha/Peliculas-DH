@@ -79,12 +79,6 @@ const controller = {
 
         res.redirect('/home')
     },
-    'probando': (req, res) => {
-        db.Movies.findAll({ include: ["genres"] })
-        .then(function(peliculas) {
-            res.send(peliculas)
-        })
-    },
     'movieDelete': (req, res) => {
         db.Movies.destroy({
             where:{
