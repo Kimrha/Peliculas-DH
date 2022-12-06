@@ -26,6 +26,4 @@ router.post('/movieEdit/:id', indexController.movieUpdate);
 router.get('/movieDelete/:id', indexController.movieDelete);
 router.post('/movieDelete/:id', indexController.movieDelete);
 
-router.get('/pruebas', indexController.probando)
-
 module.exports = router;
